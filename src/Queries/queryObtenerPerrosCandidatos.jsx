@@ -7,7 +7,7 @@ export function useQueryObtenerPerrosCandidatos(id, numero) {
     queryFn: queryObtenerPerrosCandidatos,
     retry: 0,
     refetchOnWindowFocus: false,
-    refetchOnMount: false,
+    refetchOnMount: true,
     keepPreviousData: false,
     enabled: true,
   });

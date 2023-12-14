@@ -8,7 +8,7 @@ function Inicio() {
     <Typography variant="h1" component="div">
         Bienvenido al Tinder de Perros
     </Typography>
-    <Link reloadDocument to={`/CreatePerro`}>
+    <Link to={`/CreatePerro`}>
         <Button variant="contained" color="success">
             Crear
         </Button>

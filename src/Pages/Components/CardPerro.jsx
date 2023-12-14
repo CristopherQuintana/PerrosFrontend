@@ -34,12 +34,12 @@ function CardPerro(props) {
       )}
       <CardActions>
         {props.pagina==='VerPerro' && (<>
-          <Link reloadDocument to={`/CreatePerro`}>
+          <Link to={`/CreatePerro`}>
             <Button variant="contained" color="success">
                 Crear
             </Button>
           </Link>
-          <Link reloadDocument to={`/EditPerro/${props.id}`}>
+          <Link to={`/EditPerro/${props.id}`}>
             <Button variant="contained" color="primary">
                 Editar
             </Button>

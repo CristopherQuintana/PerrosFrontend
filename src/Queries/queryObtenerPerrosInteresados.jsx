@@ -7,7 +7,7 @@ export function useQueryObtenerPerrosInteresados(id, numero) {
     queryFn: queryObtenerPerrosInteresados,
     retry: 0,
     refetchOnWindowFocus: false,
-    refetchOnMount: false,
+    refetchOnMount: true,
     keepPreviousData: false,
     enabled: true,
   });

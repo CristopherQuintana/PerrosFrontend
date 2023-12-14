@@ -38,7 +38,7 @@ function Navbar() {
         >
           {isLoading && <MenuItem disabled>Cargando...</MenuItem>}
           {isError && <MenuItem disabled>Error al cargar perros</MenuItem>}
-          {perros &&
+          {Array.isArray(perros) &&
             perros.map((perro) => (
               <MenuItem
                 key={perro.id}

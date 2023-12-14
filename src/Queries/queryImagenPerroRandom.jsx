@@ -6,7 +6,7 @@ export function useImagenPerroRandom() {
     queryFn: imagenPerroRandom,
     retry: 0,
     refetchOnWindowFocus: false,
-    refetchOnMount: false,
+    refetchOnMount: true,
     keepPreviousData: false,
     enabled: true,
   });

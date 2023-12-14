@@ -7,7 +7,7 @@ export function useQueryVerPerro (id) {
     queryFn: queryVerPerro,
     retry: 0,
     refetchOnWindowFocus: false,
-    refetchOnMount: false,
+    refetchOnMount: true,
     keepPreviousData: false,
     enabled: true,
   });

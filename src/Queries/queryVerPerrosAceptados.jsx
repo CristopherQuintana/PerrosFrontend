@@ -7,7 +7,7 @@ export function useQueryVerPerrosAceptados(id) {
     queryFn: queryVerPerrosAceptados,
     retry: 0,
     refetchOnWindowFocus: false,
-    refetchOnMount: false,
+    refetchOnMount: true,
     keepPreviousData: false,
     enabled: true,
   });

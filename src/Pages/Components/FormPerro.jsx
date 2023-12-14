@@ -6,7 +6,7 @@ import { useMutationActualizarPerro } from '../../Mutations/mutationActualizarPe
 import { useNavigate } from 'react-router-dom';
 
 function FormPerro({ formType, initialValues }) {
-  const { data: imagenAleatoria, isLoading: isLoadingAleatoria, refetch: refetchAleatoria } = useImagenPerroRandom();
+  const { data: imagenAleatoria, isLoading, isSuccess, refetch } = useImagenPerroRandom();
   const [imagenExistente, setImagenExistente] = useState(initialValues.foto || ''); // Asumiendo que el campo se llama 'foto'
   const [nombre, setNombre] = useState(initialValues.nombre || '');
   const [descripcion, setDescripcion] = useState(initialValues.descripcion || '');
@@ -17,6 +17,11 @@ function FormPerro({ formType, initialValues }) {
   const handleVolverClick = () => {
     navigate(-1);
   };
+
+  useEffect(() => {() =>
+    refetch(), 
+    [imagenAleatoria]
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +63,7 @@ function FormPerro({ formType, initialValues }) {
             </Typography>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                {isLoadingAleatoria ? (
+                {isLoading ? (
                   <CircularProgress />
                 ) : (
                   <img src={imagenExistente || imagenAleatoria} alt="foto" style={{ width: '50%', height: 'auto' }} />
@@ -89,7 +94,7 @@ function FormPerro({ formType, initialValues }) {
             <Button type="submit" variant="contained" color="primary">
               {formType === 'create' ? 'Registrar' : 'Actualizar'} Perro
             </Button>
-            <Button variant="outlined" color="primary" onClick={() => {refetchAleatoria() 
+            <Button variant="outlined" color="primary" onClick={() => {refetch() 
                                                                       setImagenExistente('')}}>
               Cambiar Imagen Aleatoria
             </Button>
