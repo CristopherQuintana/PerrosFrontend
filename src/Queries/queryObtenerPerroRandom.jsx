@@ -3,6 +3,7 @@ import clienteAxios from "../Helpers/clienteAxios";
 
 export function useBuscarInfoQuery() {
   return useQuery({
+    queryKey: ["PerroRandom"],
     queryFn: buscarInfoQuery,
     retry: 0,
     refetchOnWindowFocus: false,

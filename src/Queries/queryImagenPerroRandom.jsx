@@ -3,10 +3,11 @@ import Axios from "axios";
 
 export function useImagenPerroRandom() {
   return useQuery({
+    queryKey: ["ImagenPerroRandom"],
     queryFn: imagenPerroRandom,
     retry: 0,
     refetchOnWindowFocus: false,
-    refetchOnMount: true,
+    refetchOnMount: false,
     keepPreviousData: false,
     enabled: true,
   });

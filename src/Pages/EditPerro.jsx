@@ -13,6 +13,7 @@ function EditPerro() {
 
   return (
     <>
+      <Navbar />
       {isLoading ? (
         <CircularProgress />
       ) : (

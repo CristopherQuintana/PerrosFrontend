@@ -3,7 +3,7 @@ import clienteAxios from "../Helpers/clienteAxios";
 
 export function useQueryVerPerrosAceptados(id) {
   return useQuery({
-    queryKey: ["xD", id],
+    queryKey: ["VerPerrosAceptados", id],
     queryFn: queryVerPerrosAceptados,
     retry: 0,
     refetchOnWindowFocus: false,

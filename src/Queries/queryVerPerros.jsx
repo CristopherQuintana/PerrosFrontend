@@ -3,6 +3,7 @@ import clienteAxios from "../Helpers/clienteAxios";
 
 export function useQueryVerPerros () {
   return useQuery({
+    queryKey: ["VerPerros"],
     queryFn: queryVerPerros,
     retry: 0,
     refetchOnWindowFocus: false,
